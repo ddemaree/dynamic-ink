@@ -1,5 +1,7 @@
 # Dynamic Ink: Utility-based color theming for Tailwind
 
+<p style="background-color: yellow; color: black; font-size: 2em; line-height: 1.1; padding: 0.5em">Note: this plugin is a work in progress. NPM/Yarn commands don't work and these docs aren't yet complete, but the code should work. Everything should be cleaned up during the week of 3/29/21 — DD</p>
+
 Tailwind CSS is great at a lot of things, and as of version 2.0 it has good, built-in support for dark mode. However:
 
 * Using dark mode can be very repetitive — anytime you want to switch colors, you have to combine class names like `text-black dark:text-white`. It sure would be nice if there were some utility that always knew that, in dark mode, black should become white.
@@ -9,6 +11,49 @@ Tailwind CSS is great at a lot of things, and as of version 2.0 it has good, bui
 
 Dynamic Ink defines a set of semantically-named color 'slots' to the root of your document, e.g. `background`, `ink`, `accent`, and gives you utility classes to apply them to your elements.
 
+## Getting started
+
+First, install the plugin using NPM or Yarn (these assume you already have Tailwind and its dependencies up and running):
+
+```sh
+# If you like NPM
+npm install --save-dev @ddemaree/dynamic-ink
+
+# or if you're a cat
+yarn add --dev @ddemaree/dynamic-ink
+```
+
+Then add it to the `plugins` section of your Tailwind config (`tailwind.config.js`):
+
+```js
+module.exports = {
+  plugins: [
+    require('@ddemaree/dynamic-ink');
+  ]
+}
+```
+
+**Optional: Apply themed color defaults to your document.** If you want your default background, text, and link colors to use themed background, ink, and accent colors, apply the `.dynamic-ink` class to your `<html>` or `<body>` tag:
+
+```html
+<html class="dynamic-ink">
+```
+
+## Using the utilities
+
+Dynamic Ink ships with support for the following core plugins:
+
+* Text color (`textColor`)
+* Background color (`backgroundColor`)
+* Border color (`borderColor`)
+* SVG fill (`fill`)
+
+Theming utilities follow the naming convention `{property}-{slot}` — to set the text color of an element to your `ink-medium` slot, you'd assign it the class `.text-ink-medium`, like so:
+
+```html
+<!-- color: var(--color-ink-medium) -->
+<p class="text-ink-medium">Posted on March 25, 2021</p>
+```
 
 ## Customizing Your Theme
 
