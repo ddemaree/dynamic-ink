@@ -15,5 +15,4 @@ test('flattenColorMap', () => {
     'ink': '#242424',
     'ink-bold': '#000000'
   })
-  console.log(flattenedMap)
 })
