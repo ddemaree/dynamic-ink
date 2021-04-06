@@ -1,6 +1,6 @@
 {
   "name": "@ddemaree/dynamic-ink",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TailwindCSS plugin for easy, consistent color theming using CSS custom properties",
   "main": "dynamic-ink.js",
   "scripts": {

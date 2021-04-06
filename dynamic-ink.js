@@ -5,10 +5,10 @@ const _ = require('lodash')
 
 // Add support for utility-based theming
 const dynamicInk = plugin.withOptions(function(options = {}) {
-  const cpPrefix = options.prefix ?? 'color'
-  const addSetterClasses = options.setterClasses ?? false
-  const setBaseStyles = options.setBaseStyles ?? true
-  const componentClassName = options.componentClassName ?? 'dynamic-ink'
+  const cpPrefix = options.prefix || 'color'
+  const addSetterClasses = options.setterClasses || false
+  const setBaseStyles = options.setBaseStyles || true
+  const componentClassName = options.componentClassName || 'dynamic-ink'
 
   return function({ addUtilities, addBase, addComponents, theme, variants, config, corePlugins }) {
     const darkMode = config('darkMode')
